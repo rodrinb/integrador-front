@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+.black {
+  background-color: #151515;
+}
+.containerAbout {
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.aboutTop {
+  background-image: url("../../assets/back3.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 50vh;
+  width: 100%;
+  position: relative;
+}
+
+.aboutTop .text {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  background-color: #151515;
+  width: 35%;
+  height: 60%;
+  padding: 40px;
+}
+.text h1 {
+  font-size: 40px;
+  font-family: "Public Sans", sans-serif;
+  font-weight: 800;
+  color: white;
+}
+.text p {
+  margin: 20px 0;
+  color: white;
+}
+.text .underline {
+  margin-top: 10px;
+  width: 40%;
+  height: 4px;
+  background-color: white;
+}
+
+.aboutBottom {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.aboutBottom .imagePeople {
+  background-image: url("../../assets/back2.jpg");
+  background-position: center;
+  background-size: cover;
+  width: 50%;
+  height: 50vh;
+}
+
+.aboutBottom .imageProduct {
+  background-image: url("../../assets/back4.jpg");
+  background-position: center;
+  background-size: cover;
+  width: 50%;
+  height: 50vh;
+}
+
+.aboutBottom .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 50%;
+  padding: 50px;
+  background-color: white;
+}
+
+.aboutBottom .text h1 {
+  color: #151515;
+  font-weight: 200;
+  font-size: 40px;
+  line-height: 57px;
+}
+.aboutBottom .text p {
+  font-size: 14px;
+  line-height: 22px;
+  color: #151515;
+  width: 60%;
+}
+
+@media (max-width: 1440px) {
+  .aboutBottom .text p {
+    width: 60%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .aboutBottom .text {
+    padding: 0 30px;
+  }
+  .aboutBottom .text p {
+    width: 60%;
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutTop,
+  .aboutBottom .imagePeople {
+    height: 75vh;
+  }
+  .aboutTop .text {
+    height: auto;
+    bottom: 50%;
+    transform: translate(-50%, 60%);
+    background-color: rgba(21, 21, 21, 0.9);
+  }
+  .aboutBottom {
+    position: relative;
+  }
+  .aboutBottom .imagePeople,
+  .aboutBottom .imageProduct {
+    width: 100vw;
+  }
+  .aboutTop .text {
+    width: 50%;
+  }
+  .aboutBottom .text {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .aboutBottom .text h1 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  .aboutBottom .text p {
+    width: 100%;
+    margin: 15px 0;
+  }
+}
+
+@media (max-width: 650px) {
+  .aboutTop .text,
+  .aboutBottom .text {
+    width: 70%;
+  }
+}
+@media (max-width: 500px) {
+  .aboutTop .text,
+  .aboutBottom .text {
+    width: 80%;
+  }
+}
+
+@media (max-width: 425px) {
+  .aboutTop .text,
+  .aboutBottom .text {
+    width: 90vw;
+  }
+}

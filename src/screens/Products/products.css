@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+.Products {
+  background-color: #151515;
+  min-height: 100vh;
+  font-family: "Public Sans", sans-serif;
+}
+
+.container-products {
+  padding: 100px 0;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.product {
+  background-color: white;
+  min-height: 375px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0px 4px 31px -11px rgba(0, 0, 0, 0.57);
+  -webkit-box-shadow: 0px 4px 31px -11px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 0px 4px 31px -11px rgba(0, 0, 0, 0.57);
+}
+.product img {
+  width: 180px;
+  height: 150px;
+  position: relative;
+  top: 0;
+  transition: 0.5s all;
+}
+.product .description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 5px;
+  transition: 0.5s all;
+  width: 100%;
+}
+
+.product .description h3 {
+  text-align: start;
+  font-size: 17px;
+  font-weight: 600;
+  margin: 10px 0;
+  color: #151515;
+  align-self: flex-start;
+}
+.product .description p {
+  color: #151515;
+  font-weight: 200;
+  margin: 20px 0;
+  align-self: flex-start;
+}
+.product .description .details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.product .description .details .price {
+  color: #151515;
+  font-weight: 800;
+}
+
+.product .description .details .add-cart {
+  border: none;
+  outline: none;
+  box-shadow: 0px 4px 31px -11px rgba(0, 0, 0, 0.57);
+  -webkit-box-shadow: 0px 4px 31px -11px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 0px 4px 31px -11px rgba(0, 0, 0, 0.57);
+  padding: 8px 18px;
+  background-color: #151515;
+  color: white;
+}
+.product .description .details .add-cart svg {
+  height: 20px;
+  width: 15px;
+}
+
+.product .description .details .add-cart:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 1075px) {
+  .product {
+    margin: 15px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container-products {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .product {
+    min-height: 300px;
+    width: 250px;
+  }
+}
+@media (max-width: 560px) {
+  .container-products {
+    grid-template-columns: auto;
+    justify-items: center;
+  }
+  .product {
+    width: 55%;
+  }
+}
+
+@media (max-width: 480px) {
+  .product {
+    width: 70%;
+  }
+}

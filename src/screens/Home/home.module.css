@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+.containerHome {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  width: 100%;
+  color: white;
+}
+.homeLeft {
+  width: 50%;
+  background-color: #151515;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 25px;
+  position: relative;
+}
+.homeLeft .text {
+  position: absolute;
+  bottom: 20vh;
+}
+.homeLeft h1 {
+  font-size: 40px;
+  font-family: "Public Sans", sans-serif;
+  font-weight: 500;
+}
+.homeLeft p {
+  margin: 30px 0;
+  line-height: 25px;
+  width: 80%;
+  font-family: "Public Sans", sans-serif;
+  font-weight: 200;
+}
+
+.homeRight {
+  width: 45%;
+  background-image: url("../../assets/background.jpg");
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  width: 50%;
+}
+
+@media (max-width: 1024px) {
+  .homeLeft p {
+    width: 100%;
+  }
+  .homeLeft {
+    width: 60%;
+  }
+  .homeRight {
+    width: 40%;
+  }
+}
+
+@media (max-width: 768px) {
+  .containerHome {
+    flex-direction: column;
+  }
+  .homeLeft,
+  .homeRight {
+    width: 100%;
+    height: 65vh;
+  }
+  .homeLeft {
+    background-color: rgba(21, 21, 21, 0.9);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    padding: 0 10px;
+  }
+  .homeLeft .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    left: 50%;
+    bottom: 0%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 100%;
+  }
+  .homeRight {
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .homeLeft .text h1 {
+    font-size: 32px;
+  }
+  .homeLeft .text p {
+    margin: 15px 0;
+  }
+}
+@media (max-width: 425px) {
+  .homeLeft {
+    width: 95vw;
+  }
+}

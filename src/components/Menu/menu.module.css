@@ -1,0 +1,81 @@
+.Menu {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  display: flex;
+  justify-content: flex-start;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s all;
+}
+.Menu.show {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.Menu .containerMenu {
+  background-color: #ffffff;
+  width: 50%;
+  height: 100vh;
+  position: relative;
+  left: -50%;
+  transition: 0.5s all;
+  display: flex;
+  flex-direction: column;
+  padding: 25px 20px;
+}
+.show .containerMenu {
+  left: 0% !important;
+}
+.containerMenu > button {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 20px;
+}
+.menuNav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.menuNav .menuItem,
+.menuNav > button {
+  background: none;
+  border: none;
+  outline: none;
+  text-align: start;
+  font-size: 17px;
+  width: 100%;
+  margin: 8px 0;
+  padding: 12px 10px;
+  color: #151515;
+  transition: 0.7s all;
+  border-radius: 7px;
+}
+.menuNav .menuItem:hover,
+.menuNav > button:hover {
+  color: white;
+  background-color: #151515;
+  cursor: pointer;
+}
+
+.menuNav .separator {
+  height: 1px;
+  width: 100%;
+  background-color: #151515;
+  margin: 15px 0;
+}
+
+@media (max-width: 475px) {
+  .Menu .containerMenu {
+    width: 65%;
+    left: -65%;
+  }
+  .show .containerMenu {
+    left: 0%;
+  }
+}
