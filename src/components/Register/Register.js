@@ -17,8 +17,11 @@ const Register = ({ openForm }) => {
 
       setTimeout(async () => {
         const registerState = await register(values);
-        console.log(registerState);
-        setStateBtnRegister(true);
+
+        if (registerState.status === 200) {
+          setStateBtnRegister(true);
+          openForm(".formRegister");
+        }
       }, 2000);
     },
     onChange: (event) => {
