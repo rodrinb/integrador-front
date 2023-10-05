@@ -10,33 +10,9 @@ const Products = () => {
   const [products, setProducts] = useState([]);
   const [stateProducts, setStateProducts] = useState(true);
   const listProducts = async () => {
-    //const list = await getProducts();
-    const list = [
-      {
-        id: 1,
-        title: "NeuLens 1",
-        image: "https://agutierrez.site/imagenes/lente1.jpeg",
-        description:
-          "El funcionamiento es un fascinante proceso que combina la poderosa capacidad de procesamiento del cerebro humano con sofisticados chips electrónicos.",
-        price: 300,
-      },
-      {
-        id: 2,
-        title: "NeuLens 2",
-        image: "https://agutierrez.site/imagenes/lente2.jpeg",
-        description:
-          "El funcionamiento es un fascinante proceso que combina la poderosa capacidad de procesamiento del cerebro humano con sofisticados chips electrónicos.",
-        price: 150,
-      },
-      {
-        id: 3,
-        title: "NeuLens 3",
-        image: "https://agutierrez.site/imagenes/lente3.jpeg",
-        description:
-          "El funcionamiento es un fascinante proceso que combina la poderosa capacidad de procesamiento del cerebro humano con sofisticados chips electrónicos.",
-        price: 500,
-      },
-    ];
+    const list = await getProducts();
+    console.log(list);
+
     setProducts(list);
     setStateProducts(false);
   };
@@ -55,7 +31,7 @@ const Products = () => {
       <div className="container-products">
         {products.map((product, index) => (
           <div key={index} className="product">
-            <img src={product.image} />
+            <img src={`data:image/jpeg;base64,${product.image}`} />
             <div className="description">
               <h3>{product.title}</h3>
               <p>{product.description}</p>

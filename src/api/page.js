@@ -1,19 +1,17 @@
 import axios from "axios";
 
-const urlBase = "http://localhost:8801/api";
+const urlBase = "https://integrador-back-one.vercel.app/productos";
 
 export const getProducts = async () => {
-    //const url = urlBase + "/products";
-    const url = "https://fakestoreapi.com/products"
+  //const url = urlBase + "/products";
+  const url = urlBase + "/";
 
-    try {
-        const response = await axios.get(url);
-        if (response.status === 200) {
-            return response.data
-        }
-    } catch (e) {
-        return e;
+  try {
+    const response = await axios.get(url);
+    if (response.status === 200) {
+      return response.data;
     }
-
-
-}
+  } catch (e) {
+    return e;
+  }
+};

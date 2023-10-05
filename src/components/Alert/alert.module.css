@@ -1,0 +1,16 @@
+.Alert {
+  position: fixed;
+
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 12 !important;
+  background-color: white;
+  width: 95vw;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.Alert .text{
+  color: #151515;
+}
