@@ -119,7 +119,7 @@ const Navbar = ({ color }) => {
             {cart.map((product, index) => (
               <div key={index} className={navBarStyle.productCart}>
                 <div className={navBarStyle.productDescription}>
-                  <img src={product.image} height={50} />
+                  <img src={`data:image/jpeg;base64,${product.image}`} height={50} />
                   <h3>{product.name}</h3>
                   <span>${product.price * product.cant}</span>
                 </div>
