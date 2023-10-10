@@ -1,3 +1,4 @@
+import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 
 import aboutStyle from "./about.module.css";
@@ -43,6 +44,7 @@ const About = () => {
           <div className={aboutStyle.imageProduct}></div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

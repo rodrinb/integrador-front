@@ -1,3 +1,4 @@
+import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";  
 
 import homeStyle from "./home.module.css";
@@ -19,6 +20,7 @@ const Home = () => {
         </div>
         <div className={homeStyle.homeRight}></div>
       </div>
+      <Footer/>
     </div>
   );
 };

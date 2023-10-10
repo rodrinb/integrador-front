@@ -5,13 +5,45 @@
   min-height: 100vh;
   font-family: "Public Sans", sans-serif;
 }
+.containerFilters {
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.containerFilters button {
+  background-color: white;
+  border: none;
+  outline: none;
+  padding: 12px 24px;
+  margin-top: 20px;
+}
+.containerFilters button:hover {
+  cursor: pointer;
+}
+.filters {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.radio {
+  padding: 10px 5px;
+  margin: 0 10px;
+  background-color: white;
+}
+.radio label:hover {
+  cursor: pointer;
+}
+.radio label {
+  padding: 5px 15px;
+}
 
-.container-products {
-  padding: 100px 0;
+.containerProducts {
   display: grid;
   grid-template-columns: auto auto auto;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+  min-height: 65vh;
 }
 
 .product {
@@ -44,7 +76,7 @@
   width: 100%;
 }
 
-.product .description h3 {
+.product .description .title {
   text-align: start;
   font-size: 17px;
   font-weight: 600;
@@ -52,7 +84,7 @@
   color: #151515;
   align-self: flex-start;
 }
-.product .description p {
+.product .description .textDescription {
   color: #151515;
   font-weight: 200;
   margin: 20px 0;
@@ -71,7 +103,7 @@
   font-weight: 800;
 }
 
-.product .description .details .add-cart {
+.product .description .details .addCart {
   border: none;
   outline: none;
   box-shadow: 0px 4px 31px -11px rgba(0, 0, 0, 0.57);
@@ -81,13 +113,27 @@
   background-color: #151515;
   color: white;
 }
-.product .description .details .add-cart svg {
+.product .description .details .addCart .icon {
   height: 20px;
   width: 15px;
 }
 
-.product .description .details .add-cart:hover {
+.product .description .details .addCart:hover {
   cursor: pointer;
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background:conic-gradient(#0000 10%,#F4F4F4);
+  -webkit-mask:radial-gradient(farthest-side,#0000 calc(100% - 8px),#000 0);
+  animation: s3 1s infinite linear;
+}
+@keyframes s3 {
+  to {
+    transform: rotate(1turn);
+  }
 }
 
 @media (max-width: 1075px) {
@@ -97,7 +143,7 @@
 }
 
 @media (max-width: 1024px) {
-  .container-products {
+  .containerProducts {
     grid-template-columns: auto auto;
   }
 }
@@ -109,7 +155,7 @@
   }
 }
 @media (max-width: 560px) {
-  .container-products {
+  .containerProducts {
     grid-template-columns: auto;
     justify-items: center;
   }

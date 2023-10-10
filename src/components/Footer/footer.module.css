@@ -1,0 +1,34 @@
+.Footer {
+  background-color: #151515;
+  color: white;
+  padding: 20px;
+}
+
+.Footer .footerTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+.Footer .footerTop a {
+  color: white;
+  display: flex;
+  align-items: center;
+}
+.Footer .footerTop a svg {
+  margin: 0 5px;
+}
+.Footer p {
+  padding-top: 10px;
+  font-size: 13px;
+  text-align: center;
+}
+
+@media (max-width: 540px) {
+  .Footer .footerTop {
+    flex-direction: column;
+  }
+  .Footer .footerTop a {
+    margin: 25px 0;
+  }
+}
