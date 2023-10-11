@@ -2,7 +2,9 @@ import { Link } from "react-router-dom";
 import { FaTimes } from "react-icons/fa";
 
 import menuStyle from "./menu.module.css";
-const Menu = ({ openMenu, openForm }) => {
+import { useSelector } from "react-redux";
+const Menu = ({ openMenu, openForm, desconectar }) => {
+  const user = useSelector((state) => state.user);
   return (
     <div className={` ${menuStyle.Menu}`}>
       <div className={`containerMenu ${menuStyle.containerMenu}`}>
@@ -23,26 +25,39 @@ const Menu = ({ openMenu, openForm }) => {
             Productos
           </Link>
           <div className={menuStyle.separator}></div>
-          <button
-            type="button"
-            className=""
-            onClick={() => {
-              openForm(".formLogin");
-            }}
-          >
-            Ingresar
-          </button>
-          {/* <Register openForm={openForm} /> */}
-          <button
-            type="button"
-            className=""
-            onClick={() => {
-              openForm(".formRegister");
-            }}
-          >
-            Registrarse
-          </button>
-          {/* <Login openForm={openForm} /> */}
+          {(user.email === "" || user.fullname === "") && (
+            <>
+              <button
+                type="button"
+                className=""
+                onClick={() => {
+                  openForm(".formLogin");
+                }}
+              >
+                Ingresar
+              </button>
+              <button
+                type="button"
+                className=""
+                onClick={() => {
+                  openForm(".formRegister");
+                }}
+              >
+                Registrarse
+              </button>
+            </>
+          )}
+          {(user.email !== "" || user.fullname !== "") && (
+            <>
+              <p>Hola {user.fullname}!</p>
+              <p
+                className={menuStyle.disconnect}
+                onClick={() => desconectar()}
+              >
+                Salir
+              </p>
+            </>
+          )}
         </div>
       </div>
     </div>

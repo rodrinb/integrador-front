@@ -9,6 +9,7 @@ import { calculateCart, removeCart } from "../../redux/features/cart/cartSlice";
 import Register from "../Register/Register";
 import Login from "../Login/Login";
 import Menu from "../Menu/Menu";
+import { setUser } from "../../redux/features/user/userSlice";
 
 const Navbar = ({ color }) => {
   const user = useSelector((state) => state.user);
@@ -26,7 +27,9 @@ const Navbar = ({ color }) => {
         .querySelector(`.${listProducts}`)
         .classList.remove(navBarStyle.show);
     } else {
-      document.querySelector(`.${listProducts}`).classList.add(navBarStyle.show);
+      document
+        .querySelector(`.${listProducts}`)
+        .classList.add(navBarStyle.show);
     }
   };
 
@@ -52,6 +55,15 @@ const Navbar = ({ color }) => {
       document.querySelector(`.${menu.Menu}`).classList.add(menu.show);
     }
   };
+
+  const desconectar = () => {
+    dispatch(
+      setUser({
+        fullname: "",
+        email: "",
+      })
+    );
+  };
   return (
     <div className={`${navBarStyle.Navbar} ${color != undefined ? color : ""}`}>
       <button
@@ -60,7 +72,7 @@ const Navbar = ({ color }) => {
       >
         <AiOutlineMenu />
       </button>
-      <Menu openMenu={openMenu} openForm={openForm} />
+      <Menu openMenu={openMenu} openForm={openForm} desconectar={desconectar} />
       <div className={navBarStyle.logo}>
         <Link to="/">
           <h1>Ampersand NV</h1>
@@ -102,6 +114,9 @@ const Navbar = ({ color }) => {
         {user.email !== "" && user.fullname !== "" && (
           <>
             <p>Hola {user.fullname}!</p>
+            <p className={navBarStyle.disconnect} onClick={() => desconectar()}>
+              Salir
+            </p>
           </>
         )}
         <div className={navBarStyle.cart}>
@@ -119,7 +134,10 @@ const Navbar = ({ color }) => {
             {cart.map((product, index) => (
               <div key={index} className={navBarStyle.productCart}>
                 <div className={navBarStyle.productDescription}>
-                  <img src={`data:image/jpeg;base64,${product.image}`} height={50} />
+                  <img
+                    src={`data:image/jpeg;base64,${product.image}`}
+                    height={50}
+                  />
                   <h3>{product.name}</h3>
                   <span>${product.price * product.cant}</span>
                 </div>

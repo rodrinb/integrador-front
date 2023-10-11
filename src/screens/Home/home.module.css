@@ -93,6 +93,7 @@
 @media (max-width: 600px) {
   .homeLeft .text h1 {
     font-size: 32px;
+    text-align: justify;
   }
   .homeLeft .text p {
     margin: 15px 0;

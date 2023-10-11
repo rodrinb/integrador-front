@@ -58,8 +58,12 @@
 }
 
 .Navbar .menuUser > p {
-  padding: 0 10px;
+  padding: 20px;
   color: white;
+}
+.Navbar .menuUser > .disconnect:hover {
+  cursor: pointer;
+  color: red;
 }
 .Navbar .menuUser .cart {
   position: relative;
@@ -195,7 +199,8 @@
   .menu {
     display: none;
   }
-  .Navbar .menuUser > button {
+  .Navbar .menuUser > button,
+  .Navbar .menuUser > p {
     display: none;
   }
   .Navbar .btnMenu {

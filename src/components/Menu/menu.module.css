@@ -43,7 +43,8 @@
   align-items: flex-start;
 }
 .menuNav .menuItem,
-.menuNav > button {
+.menuNav > button,
+.menuNav p {
   background: none;
   border: none;
   outline: none;
